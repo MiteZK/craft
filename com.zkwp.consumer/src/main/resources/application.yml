@@ -1,0 +1,20 @@
+server:
+  port: 80
+  servlet:
+    context-path: /craft/consumer
+
+eureka:
+  client:  #客户端注册进eureka
+    service-url:
+      defaultZone: http://eureka.zkwp.com:7001/eureka/     #设置与Eureka Server 交互的地址查询服务和注册服务
+  instance:
+    instance-id: consumer
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: craft-consumer
+  mvc:
+    view:
+      prefix: /static/jsp/
+      suffix: .jsp
