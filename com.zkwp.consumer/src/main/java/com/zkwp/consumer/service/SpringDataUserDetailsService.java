@@ -1,7 +1,7 @@
-package com.zkwp.system.service;
+package com.zkwp.consumer.service;
 
 import com.zkwp.api.bean.Permission;
-import com.zkwp.system.dao.UserDao;
+import com.zkwp.consumer.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

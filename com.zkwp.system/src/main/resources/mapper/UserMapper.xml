@@ -2,22 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zkwp.system.dao.UserDao" >
 
-  <select id="getUserByUsername" parameterType="java.lang.String" resultType="com.zkwp.system.bean.User">
-      select * from sys_user where username = #{username}
-  </select>
 
-  <select id="findPermissionsByUserId" parameterType="java.lang.String" resultType="com.zkwp.system.bean.Permission">
-      select *
-      from sys_permission
-      where  id in (
-        select permission_id
-        from sys_role_permission
-        where role_id in (
-            select role_id
-            from sys_user_role
-            where user_id = #{userId}
+    <select id="getUserByUsername" parameterType="java.lang.String" resultType="com.zkwp.api.bean.User">
+        select * from sys_user where username = #{username}
+    </select>
+
+    <select id="findPermissionsByUserId" parameterType="java.lang.String" resultType="com.zkwp.api.bean.Permission">
+        select *
+        from sys_permission
+        where  id in (
+            select permission_id
+            from sys_role_permission
+            where role_id in (
+                select role_id
+                from sys_user_role
+                where user_id = #{userId}
+            )
         )
-      )
-  </select>
+    </select>
+
+    <select id="addUser" parameterType = "com.zkwp.api.bean.User" resultType="boolean">
+        insert into sys_user
+        (username, password, phone, email, created, updated)
+        value
+        (#{user.username},#{user.password},#{user.phone},#{user.email},#{user.username},#{user.updated})
+    </select>
 
 </mapper>

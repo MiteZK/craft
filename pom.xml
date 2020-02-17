@@ -11,6 +11,7 @@
 		<module>com.zkwp.system</module>
         <module>com.zkwp.eureka</module>
         <module>com.zkwp.consumer</module>
+        <module>com.zkwp.api</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>

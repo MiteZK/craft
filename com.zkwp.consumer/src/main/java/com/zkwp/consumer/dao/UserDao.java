@@ -1,4 +1,4 @@
-package com.zkwp.system.dao;
+package com.zkwp.consumer.dao;
 
 
 import com.zkwp.api.bean.Permission;
@@ -15,9 +15,7 @@ import java.util.List;
 @Mapper
 public interface UserDao {
 
-     User getUserByUsername(@Param("username") String username);
+    public User getUserByUsername(@Param("username") String username);
 
-     List<Permission> findPermissionsByUserId(@Param("userId") String userId);
-
-     Boolean addUser(User user);
+    public List<Permission> findPermissionsByUserId(@Param("userId") String userId);
 }

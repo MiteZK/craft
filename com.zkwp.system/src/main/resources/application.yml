@@ -19,8 +19,9 @@ spring:
 
 
 mybatis:
-  type-aliases-package: com/zkwp/system
+  type-aliases-package: com/zkwp/api/bean
   mapper-locations: classpath:mapper/*.xml
+
 
 
 server:

@@ -20,9 +20,4 @@ public class UserUtil  {
         return newPassword;
     }
 
-    public static void main(String[] args) {
-       String pass = BCryptEncrypt("admin");
-        System.out.println(pass);
-    }
-
 }

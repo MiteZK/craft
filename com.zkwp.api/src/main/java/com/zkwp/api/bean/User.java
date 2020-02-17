@@ -1,4 +1,4 @@
-package com.zkwp.system.bean;
+package com.zkwp.api.bean;
 
 import lombok.Data;
 
